@@ -13,19 +13,7 @@ class YaUploader:
             'Content-Type': 'application/json',
             'Authorization': f'OAuth {self.token}'
         }
-    def get_files_list(self):
-        uri = '/v1/disk/resources/files/'
-        url = self.host + uri
-        headers = self.get_headers()
-        response = requests.get(url, headers=headers)
-        print(response.json())
 
-    def create_folder(self):
-        uri = '/v1/disk/resources/'
-        url = self.host + uri
-        params = {'path': '/Test'}
-        response = requests.put(url, headers=self.get_headers(), params=params)
-        print(response.status_code)
 
     def get_upload_link(self, file_name):
         uri = '/v1/disk/resources/upload/'
